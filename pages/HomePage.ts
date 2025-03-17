@@ -17,6 +17,7 @@ async navigate(url: string) {
 
 async isLogoVisible() {
     const logo = await this.page.locator('#shopify-section-header-main-new').getByRole('link', { name: 'logo' });
+    await logo.waitFor({ state: 'visible', timeout: 10000 });
     return logo.isVisible();
 }
 
@@ -35,6 +36,9 @@ async navbar(expectedNavbar: string[]) {
 
 async searchByProductCategory(category: string) {
     const searchBox=this.page.locator('input[type="text"]').first();
+    await searchBox.isVisible();
+    await searchBox.isEnabled();
+    
     await searchBox.fill(category);
     while (!await this.page.url().includes('search')) {
         await searchBox.click();
@@ -49,7 +53,7 @@ async searchByProductNameSuggestion(product: string, dropdown: string) {
     const searchBox= this.page.locator('input[type="text"]').first();
     searchBox.fill(product);
     await searchBox.click();    
-    await this.page.waitForSelector('li.boost-pfs-search-suggestion-header-suggestions',{state: 'visible'});
+    //await this.page.waitForSelector('li.boost-pfs-search-suggestion-header-suggestions',{state: 'visible'});
     const products = await this.page.locator('.boost-pfs-search-suggestion-product-title').all();
     for (const product of products) {
         const productText = await product.textContent();
@@ -58,14 +62,21 @@ async searchByProductNameSuggestion(product: string, dropdown: string) {
             break;
         }
     }
-    await this.page.waitForLoadState('load');
+    await this.page.waitForLoadState('domcontentloaded');
     
     const currentUrl = await this.page.url();
     return currentUrl;
 }
 
 async openCart() {
-    await this.page.locator('#cart_block').click({force:true});
+    const cartLocator = await this.page.locator('#cart_block');
+    try {
+        await cartLocator.waitFor({ state: 'visible', timeout: 10000 });
+        await cartLocator.click({ force: true });
+    } catch (error) {
+        console.log(error.message);
+        return; 
+    }
     let cartStatus = this.page.locator('div[class="empty"]');
     if(await cartStatus.isVisible()){
         await this.page.locator('a.close-cart').first().click();

@@ -1,0 +1,118 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Go to Homepage,logo verify, search for product wise Category
+- Location: C:\Users\kowshik\Desktop\AutomationAssignment\tests\homepage.test.ts:25:5
+
+# Error details
+
+```
+Error: locator.press: Test timeout of 60000ms exceeded.
+Call log:
+  - waiting for locator('input[type="text"]').first()
+    - locator resolved to <input name="q" type="text" id="search_query" autocomplete="off" placeholder="What are you looking for?" class="form-control input-block-level search-query search-input"/>
+  - elementHandle.press("Enter")
+
+    at HomePage.searchByProductCategory (C:\Users\kowshik\Desktop\AutomationAssignment\pages\HomePage.ts:41:25)
+    at C:\Users\kowshik\Desktop\AutomationAssignment\tests\homepage.test.ts:35:24
+```
+
+# Test source
+
+```ts
+   1 | import { expect, Page } from '@playwright/test';
+   2 |
+   3 |
+   4 | export class HomePage {
+   5 |     constructor(private page: Page) {
+   6 |     this.page = page;
+   7 | }
+   8 |
+   9 | async navigate(url: string) {
+  10 |     try{
+  11 |         await this.page.goto(url,{waitUntil:'load'});
+  12 |     }catch(error){
+  13 |         console.log("Error in navigating to URL: "+url);
+  14 |     }
+  15 |     return url;
+  16 | }
+  17 |
+  18 | async isLogoVisible() {
+  19 |     const logo = await this.page.locator('#shopify-section-header-main-new').getByRole('link', { name: 'logo' });
+  20 |     return logo.isVisible();
+  21 | }
+  22 |
+  23 | async navbar(expectedNavbar: string[]) {
+  24 |     const menuAllItems: string[] = [];
+  25 |     for(const item of expectedNavbar){
+  26 |         const menuItem = await this.page.locator('li.megamenu-item',{ hasText:item });
+  27 |         await expect(menuItem).toBeVisible();  
+  28 |         await menuItem.hover({force:true});
+  29 |         await this.page.waitForLoadState('domcontentloaded');
+  30 |         const dropDown = await menuItem.locator('.menu-box');
+  31 |         menuAllItems.push(await menuItem.innerText());
+  32 |     }
+  33 |     return menuAllItems;
+  34 | }
+  35 |
+  36 | async searchByProductCategory(category: string) {
+  37 |     const searchBox=this.page.locator('input[type="text"]').first();
+  38 |     await searchBox.fill(category);
+  39 |     while (!await this.page.url().includes('search')) {
+  40 |         await searchBox.click();
+> 41 |         await searchBox.press('Enter');
+     |                         ^ Error: locator.press: Test timeout of 60000ms exceeded.
+  42 |         await this.page.waitForTimeout(1000);
+  43 |     }    
+  44 |     const currentUrl = await this.page.url();
+  45 |     return currentUrl;
+  46 | }
+  47 |  
+  48 | async searchByProductNameSuggestion(product: string, dropdown: string) {
+  49 |     const searchBox= this.page.locator('input[type="text"]').first();
+  50 |     searchBox.fill(product);
+  51 |     await searchBox.click();    
+  52 |     await this.page.waitForSelector('li.boost-pfs-search-suggestion-header-suggestions',{state: 'visible'});
+  53 |     const products = await this.page.locator('.boost-pfs-search-suggestion-product-title').all();
+  54 |     for (const product of products) {
+  55 |         const productText = await product.textContent();
+  56 |         if (productText && productText.trim().toLowerCase() === dropdown.trim().toLowerCase()) {
+  57 |             await product.click();
+  58 |             break;
+  59 |         }
+  60 |     }
+  61 |     await this.page.waitForLoadState('domcontentloaded');
+  62 |     
+  63 |     const currentUrl = await this.page.url();
+  64 |     return currentUrl;
+  65 | }
+  66 |
+  67 | async openCart() {
+  68 |     const cartLocator = await this.page.locator('#cart_block');
+  69 |     try {
+  70 |         await cartLocator.waitFor({ state: 'visible', timeout: 10000 });
+  71 |         await cartLocator.click({ force: true });
+  72 |     } catch (error) {
+  73 |         console.log(error.message);
+  74 |         return; 
+  75 |     }
+  76 |     let cartStatus = this.page.locator('div[class="empty"]');
+  77 |     if(await cartStatus.isVisible()){
+  78 |         await this.page.locator('a.close-cart').first().click();
+  79 |         return null;
+  80 |     }
+  81 |     else{
+  82 |         const currentUrl = await this.page.url();
+  83 |         return currentUrl;
+  84 |         // cartStatus = this.page.locator('div.cart-total');
+  85 |         // console.log("SOEMTHING  "+ cartStatus.innerText());
+  86 |         }
+  87 |     }
+  88 | }
+  89 |
+```

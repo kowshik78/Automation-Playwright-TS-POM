@@ -1,0 +1,96 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Go to Homepage,logo verify, search for product wise Category
+- Location: C:\Users\kowshik\Desktop\AutomationAssignment\tests\homepage.test.ts:28:5
+
+# Error details
+
+```
+Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: "https://www.daals.co.uk/"
+Received: "about:blank"
+    at C:\Users\kowshik\Desktop\AutomationAssignment\tests\homepage.test.ts:34:24
+```
+
+# Test source
+
+```ts
+   1 | import { test, expect } from '@playwright/test';
+   2 | import { HomePage } from '../pages/HomePage';
+   3 | import { CartPage } from '../pages/CartPage';
+   4 | import TestData from '../data/testData.ts';
+   5 |
+   6 |
+   7 | test('Go to Homepage,logo verify, search for product, choose from dropdown', async ({ page }) => {
+   8 |     const homePage = new HomePage(page);
+   9 |     const cartPage = new CartPage(page);
+  10 |     const { url, searchProduct,dropdownSuggested, emptyCart } = TestData.pageData;
+  11 |     
+  12 |     await homePage.navigate(url);  
+  13 |     expect(page.url()).toBe(url);
+  14 |     const logo = await homePage.isLogoVisible();   
+  15 |     expect(logo).toBeTruthy();
+  16 |     
+  17 |     const dropdownProductUrl = await homePage.searchByProductNameSuggestion(searchProduct, dropdownSuggested);
+  18 |     await homePage.navigate(dropdownProductUrl);
+  19 |     const productUrlVerify = await cartPage.productVSurlChecker(dropdownProductUrl);
+  20 |     if (productUrlVerify) {
+  21 |         expect(productUrlVerify.toLowerCase()).toContain(dropdownSuggested.toLowerCase());
+  22 |     } else {
+  23 |         console.log("Null or empty.");
+  24 |     }    
+  25 |     console.log("______TEST 1______ " + dropdownProductUrl);
+  26 | });
+  27 |
+  28 | test('Go to Homepage,logo verify, search for product wise Category', async ({ page }) => {
+  29 |     const homePage = new HomePage(page);
+  30 |     const cartPage = new CartPage(page);
+  31 |     const{url, searchProduct} = TestData.pageData;
+  32 |
+  33 |     await homePage.navigate(url);      
+> 34 |     expect(page.url()).toBe(url);
+     |                        ^ Error: expect(received).toBe(expected) // Object.is equality
+  35 |     const logo = await homePage.isLogoVisible();  
+  36 |     expect(logo).toBeTruthy();
+  37 |
+  38 |     const productUrl = await homePage.searchByProductCategory(searchProduct);
+  39 |     const productUrlVerify = await cartPage.productVSurlChecker(productUrl);
+  40 |     expect(productUrlVerify).toContain(searchProduct);
+  41 |     
+  42 |     console.log("_____TEST 2_____" + productUrlVerify+" > "+productUrl);
+  43 | });
+  44 |
+  45 | test('Go to Homepage,Navbar, Homepage product add to cart', async ({ page }) => {
+  46 |     const homePage = new HomePage(page);
+  47 |     const cartPage = new CartPage(page);
+  48 |     const{url, searchProduct,productIndex,expectedMenuItems} = TestData.pageData;
+  49 |
+  50 |     await homePage.navigate(url);      expect(page.url()).toBe(url);
+  51 |     const logo = await homePage.isLogoVisible();  expect(logo).toBeTruthy();
+  52 |
+  53 |     const menu = await homePage.navbar(expectedMenuItems);
+  54 |     expect(menu).toEqual(expectedMenuItems);
+  55 |
+  56 |     const isCartVisible = await cartPage.verifyCart();
+  57 |     expect(isCartVisible).toBeTruthy();
+  58 |
+  59 |     const { pageReloaded, newUrl, productName, productOldPrice, productLivePrice } = await cartPage.productClickFromHomepage(productIndex);
+  60 |     expect(pageReloaded).toBe(true);
+  61 |
+  62 |     const {description, livePrice} = await cartPage.addToCartFromDetails(newUrl);
+  63 |     expect(productName).toBe(description);
+  64 |     expect(productLivePrice?.trim()).toBe(livePrice?.trim());
+  65 |
+  66 |     await homePage.openCart();
+  67 |
+  68 |     console.log("_______TEST 3______" + description + " > " + livePrice);
+  69 | });
+  70 |
+```

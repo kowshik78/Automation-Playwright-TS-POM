@@ -1,0 +1,772 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Go to Homepage,logo verify, search for product, choose from dropdown
+- Location: C:\Users\kowshik\Desktop\AutomationAssignment\tests\homepage.test.ts:7:5
+
+# Error details
+
+```
+Error: page.waitForSelector: Test timeout of 60000ms exceeded.
+Call log:
+  - waiting for locator('li.boost-pfs-search-suggestion-header-suggestions') to be visible
+
+    at HomePage.searchByProductNameSuggestion (C:\Users\kowshik\Desktop\AutomationAssignment\pages\HomePage.ts:52:21)
+    at C:\Users\kowshik\Desktop\AutomationAssignment\tests\homepage.test.ts:17:32
+```
+
+# Page snapshot
+
+```yaml
+- paragraph: ARE YOU IN THE RIGHT PLACE?
+- button "UK":
+  - img
+  - text: UK
+- text: OR
+- button "US":
+  - img
+  - text: US
+- link "CONFIRM"
+- img
+- paragraph:
+  - strong: WELCOME SPRING
+  - text: "| Explore New Styles |"
+  - link "SHOP NOW"
+- search:
+  - button:
+    - img
+  - textbox "What are you looking for?": chair
+- link "logo":
+  - img "logo"
+- paragraph: 02477 180 023
+- paragraph: 8:30am - 5.30pm
+- list:
+  - listitem:
+    - link:
+      - img
+  - listitem:
+    - link:
+      - img
+  - listitem:
+    - link "Basket":
+      - img
+      - text: Basket
+- list:
+  - listitem:
+    - link "Lounge"
+  - list:
+    - listitem:
+      - link "Sofas"
+      - list:
+        - listitem:
+          - link "One-Seater Sofas"
+        - listitem:
+          - link "Loveseats"
+        - listitem:
+          - link "Two-Seater Sofas"
+        - listitem:
+          - link "Three-Seater Sofas"
+        - listitem:
+          - link "Four-Seater Sofas"
+        - listitem:
+          - link "Five-Seater Sofas"
+        - listitem:
+          - link "Six-Seater or Larger Sofas"
+        - listitem:
+          - link "Chaise Sofas"
+        - listitem:
+          - link "Corner Sofas"
+        - listitem:
+          - link "U-Shape Sofas"
+        - listitem:
+          - link "Modular Sofas"
+    - listitem:
+      - link "Footstools & Pouffes"
+      - list:
+        - listitem:
+          - link "View All Footstools"
+  - list:
+    - listitem:
+      - link "Armchairs"
+      - list:
+        - listitem:
+          - link "View All Armchairs"
+    - listitem:
+      - link "Accent Chairs"
+      - list:
+        - listitem:
+          - link "View All Accent Chairs"
+    - listitem:
+      - link "Rocking Chairs"
+      - list:
+        - listitem:
+          - link "View All Rocking Chairs"
+    - listitem:
+      - link "Sofa Beds"
+      - list:
+        - listitem:
+          - link "Loveseat Sofa Beds"
+        - listitem:
+          - link "Two Seater Sofa Beds"
+        - listitem:
+          - link "Three Seater Sofa Beds"
+        - listitem:
+          - link "Chaise Sofa Beds"
+  - list:
+    - listitem:
+      - link "Storage"
+      - list:
+        - listitem:
+          - link "Bookcases & Shelves"
+        - listitem:
+          - link "Cabinets"
+        - listitem:
+          - link "Sideboards"
+        - listitem:
+          - link "TV Units"
+        - listitem:
+          - link "Pet Furniture"
+    - listitem:
+      - link "Tables"
+      - list:
+        - listitem:
+          - link "Coffee Tables"
+        - listitem:
+          - link "Console Tables"
+        - listitem:
+          - link "Side Tables"
+  - list:
+    - listitem:
+      - link "Shop By Style"
+      - list:
+        - listitem:
+          - link "Buttoned Sofas"
+        - listitem:
+          - link "Curved Sofas"
+        - listitem:
+          - link "Traditional Sofas"
+        - listitem:
+          - link "Neutral Sofas"
+        - listitem:
+          - link "Chesterfield Sofas"
+    - listitem:
+      - link "Shop By Material"
+      - list:
+        - listitem:
+          - link "Boucle Sofas"
+        - listitem:
+          - link "Chenille Sofas"
+        - listitem:
+          - link "Fabric Sofas"
+        - listitem:
+          - link "Faux Leather Sofas"
+        - listitem:
+          - link "Linen Sofas"
+        - listitem:
+          - link "Velvet Sofas"
+  - link "New Lutyens Modular Sofas Lutyens Modular Sofas":
+    - heading "New" [level=3]:
+      - img
+      - text: New
+    - heading "Lutyens Modular Sofas" [level=2]
+    - img "Lutyens Modular Sofas"
+  - listitem:
+    - link "Dining"
+  - listitem:
+    - link "Bedroom"
+  - listitem:
+    - link "Storage"
+  - listitem:
+    - link "Office"
+  - listitem:
+    - link "Accessories"
+  - listitem:
+    - link "Garden"
+  - listitem:
+    - link "New"
+  - listitem:
+    - link "Offers"
+- list:
+  - listitem:
+    - paragraph: Hello, Spring
+    - heading "Find new, refreshing additions for the season" [level=2]
+    - link "SHOP NOW"
+- list:
+  - listitem:
+    - link "Free delivery over £99 Express and next day available":
+      - paragraph:
+        - strong: Free delivery over £99
+      - paragraph: Express and next day available
+  - listitem:
+    - link "trustpilot Star 4.5 Loved by our customers Tried and trusted since 2013":
+      - img "trustpilot"
+      - img "Star 4.5"
+      - paragraph:
+        - strong: Loved by our customers
+      - paragraph: Tried and trusted since 2013
+  - listitem:
+    - link "New & Exclusive styles Something new every time you visit":
+      - paragraph:
+        - strong: New & Exclusive styles
+      - paragraph: Something new every time you visit
+  - listitem:
+    - link "Fair prices all year round Stylish furniture without compromise":
+      - paragraph:
+        - strong: Fair prices all year round
+      - paragraph: Stylish furniture without compromise
+- heading "Shop by category" [level=3]
+- link "Sofas":
+  - img
+  - heading "Sofas" [level=2]
+- link "dining tables":
+  - img
+  - heading "dining tables" [level=2]
+- link "beds":
+  - img
+  - heading "beds" [level=2]
+- link "Mirrors":
+  - img
+  - heading "Mirrors" [level=2]
+- link "Storage":
+  - img
+  - heading "Storage" [level=2]
+- link "dining chairs":
+  - img
+  - heading "dining chairs" [level=2]
+- link "Accessories":
+  - img
+  - heading "Accessories" [level=2]
+- link "Entertaining":
+  - img
+  - heading "Entertaining" [level=2]
+- heading "Handpicked for you" [level=2]
+- img
+- img
+- link "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed Egerie Curved Headboard Beige Boucle Ottoman Storage Bed":
+  - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - img
+- button:
+  - img
+- link "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed £399.99":
+  - heading "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed" [level=3]
+  - text: £399.99
+- link
+- list:
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+- link "Maru Oval 6-8 Seater Extending Oak Pedestal Dining Table, Silver Oak Maru Oval 6-8 Seater Extending Oak Pedestal Dining Table, Silver Oak":
+  - img "Maru Oval 6-8 Seater Extending Oak Pedestal Dining Table, Silver Oak"
+  - img "Maru Oval 6-8 Seater Extending Oak Pedestal Dining Table, Silver Oak"
+  - img
+- button:
+  - img
+- link "Maru Oval 6-8 Seater Extending Oak Pedestal Dining Table, Silver Oak £549.99":
+  - heading "Maru Oval 6-8 Seater Extending Oak Pedestal Dining Table, Silver Oak" [level=3]
+  - text: £549.99
+- link
+- list:
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem: + 1
+- link "Maru Round 4-6 Seater Extending Oak Pedestal Dining Table, Oak Maru Round 4-6 Seater Extending Oak Pedestal Dining Table, Oak":
+  - img "Maru Round 4-6 Seater Extending Oak Pedestal Dining Table, Oak"
+  - img "Maru Round 4-6 Seater Extending Oak Pedestal Dining Table, Oak"
+  - img
+- button:
+  - img
+- link "Maru Round 4-6 Seater Extending Oak Pedestal Dining Table, Oak £439.99":
+  - heading "Maru Round 4-6 Seater Extending Oak Pedestal Dining Table, Oak" [level=3]
+  - text: £439.99
+- link
+- list:
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem: + 1
+- link "Maru Round 4-6 Seater Extending Oak Pedestal Dining Table, Silver Oak Maru Round 4-6 Seater Extending Oak Pedestal Dining Table, Silver Oak":
+  - img "Maru Round 4-6 Seater Extending Oak Pedestal Dining Table, Silver Oak"
+  - img "Maru Round 4-6 Seater Extending Oak Pedestal Dining Table, Silver Oak"
+  - img
+- button:
+  - img
+- link "Maru Round 4-6 Seater Extending Oak Pedestal Dining Table, Silver Oak £439.99":
+  - heading "Maru Round 4-6 Seater Extending Oak Pedestal Dining Table, Silver Oak" [level=3]
+  - text: £439.99
+- link
+- list:
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem: + 1
+- link "Frances Woven Rattan Dressing Table with Mirror, Natural Frances Woven Rattan Dressing Table with Mirror, Natural":
+  - img "Frances Woven Rattan Dressing Table with Mirror, Natural"
+  - img "Frances Woven Rattan Dressing Table with Mirror, Natural"
+  - img
+- button:
+  - img
+- link "Frances Woven Rattan Dressing Table with Mirror, Natural £179.99":
+  - heading "Frances Woven Rattan Dressing Table with Mirror, Natural" [level=3]
+  - text: £179.99
+- link
+- list:
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+- link "Izzy Curved Rattan 160cm Wide TV Unit, Natural Izzy Curved Rattan 160cm Wide TV Unit, Natural":
+  - img "Izzy Curved Rattan 160cm Wide TV Unit, Natural"
+  - img "Izzy Curved Rattan 160cm Wide TV Unit, Natural"
+  - img
+- button:
+  - img
+- link "Izzy Curved Rattan 160cm Wide TV Unit, Natural £269.99":
+  - heading "Izzy Curved Rattan 160cm Wide TV Unit, Natural" [level=3]
+  - text: £269.99
+- link
+- list:
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+- link "Maru Oval 6-8 Seater Extending Oak Pedestal Dining Table, Oak Maru Oval 6-8 Seater Extending Oak Pedestal Dining Table, Oak":
+  - img "Maru Oval 6-8 Seater Extending Oak Pedestal Dining Table, Oak"
+  - img "Maru Oval 6-8 Seater Extending Oak Pedestal Dining Table, Oak"
+  - img
+- button:
+  - img
+- link "Maru Oval 6-8 Seater Extending Oak Pedestal Dining Table, Oak £549.99":
+  - heading "Maru Oval 6-8 Seater Extending Oak Pedestal Dining Table, Oak" [level=3]
+  - text: £549.99
+- link
+- list:
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem: + 1
+- link "Frances Woven Rattan Chest of 6 Drawers, Natural Frances Woven Rattan Chest of 6 Drawers, Natural":
+  - img "Frances Woven Rattan Chest of 6 Drawers, Natural"
+  - img "Frances Woven Rattan Chest of 6 Drawers, Natural"
+  - img
+- button:
+  - img
+- link "Frances Woven Rattan Chest of 6 Drawers, Natural £259.99":
+  - heading "Frances Woven Rattan Chest of 6 Drawers, Natural" [level=3]
+  - text: £259.99
+- link
+- list:
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+- link "Wilton Warm Stone Fabric Ottoman TV Bed Wilton Warm Stone Fabric Ottoman TV Bed":
+  - img "Wilton Warm Stone Fabric Ottoman TV Bed"
+  - img "Wilton Warm Stone Fabric Ottoman TV Bed"
+  - img
+- button:
+  - img
+- link "Wilton Warm Stone Fabric Ottoman TV Bed £799.99":
+  - heading "Wilton Warm Stone Fabric Ottoman TV Bed" [level=3]
+  - text: £799.99
+- link
+- list:
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem: + 1
+- link "Daphnis Cinnamon Velvet Sofa, 3-Seater Daphnis Cinnamon Velvet Sofa, 3-Seater":
+  - img "Daphnis Cinnamon Velvet Sofa, 3-Seater"
+  - img "Daphnis Cinnamon Velvet Sofa, 3-Seater"
+  - img
+- button:
+  - img
+- link "Daphnis Cinnamon Velvet Sofa, 3-Seater £699.99":
+  - heading "Daphnis Cinnamon Velvet Sofa, 3-Seater" [level=3]
+  - text: £699.99
+- link
+- list:
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem: + 3
+- link "Modular Sofas files/MB_Area1.png":
+  - heading "Modular Sofas" [level=2]
+  - img "files/MB_Area1.png"
+- link "Statement Armchairs files/UKArea2_Extended.png":
+  - heading "Statement Armchairs" [level=2]
+  - img "files/UKArea2_Extended.png"
+- link "Storage files/UKArea_3_Extended.png":
+  - heading "Storage" [level=2]
+  - img "files/UKArea_3_Extended.png"
+- link "Chairs & Stools files/UKArea_4_Extended.png":
+  - heading "Chairs & Stools" [level=2]
+  - img "files/UKArea_4_Extended.png"
+- link "Hallway Furniture files/UKArea_5_Extended.png":
+  - heading "Hallway Furniture" [level=2]
+  - img "files/UKArea_5_Extended.png"
+- img "Delivery icon"
+- heading "0% Finance" [level=2]
+- text: Pay in 3 or 4 interest-free instalments with Klarna or Clearpay
+- link "READ MORE"
+- img "Delivery icon"
+- heading "Delivered by daals" [level=2]
+- text: Free Standard Delivery on orders over £99
+- link "READ MORE"
+- img "Delivery icon"
+- heading "New Arrivals" [level=2]
+- text: Check our latest exclusive designs! Limited availability
+- link "SHOP NOW"
+- heading "Adored by" [level=2]
+- img "logo"
+- img "logo"
+- img "logo"
+- img "logo"
+- link "logo":
+  - img "logo"
+- link "logo":
+  - img "logo"
+- img "logo"
+- img "logo"
+- img "logo"
+- img "logo"
+- img "logo"
+- img "logo"
+- img "logo"
+- img "logo"
+- heading "Be a daaling" [level=2]
+- paragraph: Tag and mention @daals.co.uk to be featured
+- heading "Bringing thoughtfully designed furniture to you" [level=1]
+- paragraph: At daals, we want to help you create the best space possible, which is why our brand aims to make furniture fashionable, stylish and accessible to everyone. Loved by homes, designers, and businesses alike, our furniture is designed in the UK and crafted globally, ensuring we bring the best to you at unbeatable prices.
+- link "Read More"
+- heading "What our customers think about daals" [level=3]
+- img "trustpilot"
+- heading "Highly rated by you" [level=4]
+- img "Star 4.5"
+- paragraph:
+  - link "Based on 31469 reviews"
+- paragraph: Showing our latest reviews
+- img
+- img "Star 5"
+- img
+- text: Verified
+- heading "Nice and quick delivery" [level=2]
+- paragraph: Nice and quick delivery , chair is quality as described
+- text: Peter Mallen 53 seconds Ago
+- img "Star 5"
+- img
+- text: Verified
+- heading "Good Delivery" [level=2]
+- paragraph: Scott and Eric were great and very helpful. Highly recommended.
+- text: James Mackay 16 minutes Ago
+- img "Star 5"
+- img
+- text: Verified
+- heading "Scott & Eric did a cracking job with…" [level=2]
+- paragraph: Scott & Eric did a cracking job with the deliveries today
+- text: Lorraine Mitchell-Phillips 37 minutes Ago
+- img "Star 5"
+- img
+- text: Verified
+- heading "Great customer service" [level=2]
+- paragraph: I put in the wrong address! However, Sean and James were so lovely when coming to the correct address. I love a good cus ...
+- text: Consumer 39 minutes Ago
+- img "Star 5"
+- img
+- text: Verified
+- heading "Beautiful chair packaged great" [level=2]
+- paragraph: Beautiful chair packaged great
+- text: Linda 50 minutes Ago
+- img "Star 5"
+- img
+- text: Verified
+- heading "Delivery of Furniture" [level=2]
+- paragraph: Delivery was spot on time with communications really appreciated. Delivery guys were very smart and courteous.
+- text: Kevin Castle 54 minutes Ago
+- img "Star 5"
+- img
+- text: Verified
+- heading "George and Cam were great after a small…" [level=2]
+- paragraph: George and Cam were great after a small issue with my sofa, resolved quick and friendly delivery
+- text: Hannah Turner 57 minutes Ago
+- img "Star 5"
+- img
+- text: Verified
+- heading "The service has been fantastic" [level=2]
+- paragraph: The service has been fantastic. I changed a couple of items on my order and Glendale from the customer service team was ...
+- text: customer 1 hour ago
+- img "Star 5"
+- img
+- text: Verified
+- heading "Good quality product" [level=2]
+- paragraph: Good quality product, delivered exactly as specified. Doesn’t always happen these days does it !
+- text: Peter Frost 1 hour ago
+- img "Star 5"
+- img
+- text: Verified
+- heading "Delivery men were on time" [level=2]
+- paragraph: Delivery men were on time, helpful and brought it inside for me!
+- text: Georgina Jones 1 hour ago
+- img "Star 5"
+- img
+- text: Verified
+- heading "Professional and personable delivery…" [level=2]
+- paragraph: Professional and personable delivery service. There was plenty of former notice of the delivery and the men who deliver ...
+- text: SD 1 hour ago
+- img "Star 5"
+- img
+- text: Verified
+- heading "Ordered some furniture from Daals" [level=2]
+- paragraph: Ordered some furniture from Daals. Amrit and Jason delivered our Daals order and updated us along the way. Great experie ...
+- text: Dan S 2 hours Ago
+- img "Star 5"
+- img
+- text: Verified
+- heading "George and Cam were very helpful and…" [level=2]
+- paragraph: George and Cam were very helpful and polite! Efficient delivery and brought it all the way to the top floor for me.
+- text: Vyara Georgieva 2 hours Ago
+- img "Star 5"
+- img
+- text: Verified
+- heading "Scott and Eric were super friendly and…" [level=2]
+- paragraph: Scott and Eric were super friendly and efficient, carried parcel into room
+- text: Musab Bora 2 hours Ago
+- img "Star 4"
+- img
+- text: Verified
+- heading "Amrit and Jason" [level=2]
+- paragraph: Amrit and Jason - very polite and friendly.
+- text: Alison 2 hours Ago
+- img "Star 5"
+- img
+- text: Verified
+- heading "Great communication and timely delivery" [level=2]
+- paragraph: "Great communication re: delivery and friendly polite delivery guys - George and Cam . Thank you"
+- text: Camilla Simpson 2 hours Ago
+- img "Star 5"
+- img
+- text: Verified
+- heading "Delivery was on time and very…" [level=2]
+- paragraph: Delivery was on time and very professional.
+- text: Ben Ashton 2 hours Ago
+- img "Star 5"
+- img
+- text: Verified
+- heading "Delivered quickly & at the time specified" [level=2]
+- paragraph: Good product, delivered within a few days of order. Amrit & Jason arrived exactly on specified delivery slot.
+- text: Josh 2 hours Ago
+- img "Star 5"
+- img
+- text: Verified
+- heading "Very friendly team that delivered on…" [level=2]
+- paragraph: Very friendly team that delivered on time
+- text: Emily C 3 hours Ago
+- img "Star 5"
+- img
+- text: Verified
+- heading "good delivery" [level=2]
+- paragraph: thanks sanj and lovepreet very polite and punctual
+- text: Terence Chin 3 hours Ago
+- img
+- heading "LET'S STAY IN TOUCH" [level=2]
+- text: Email
+- textbox "Email"
+- button "SUBSCRIBE"
+- link:
+  - img
+- link:
+  - img
+- link:
+  - img
+- link:
+  - img
+- separator
+- heading "About us" [level=3]
+- list:
+  - listitem:
+    - link "About daals"
+  - listitem:
+    - link "Customer Reviews"
+  - listitem:
+    - link "Terms & Conditions"
+  - listitem:
+    - link "Privacy Policy"
+  - listitem:
+    - link "Blog"
+- heading "Customer care" [level=3]
+- list:
+  - listitem:
+    - link "Contact Us"
+  - listitem:
+    - link "Returns Policy"
+  - listitem:
+    - link "Warranty"
+  - listitem:
+    - link "FAQs"
+- heading "Your order" [level=3]
+- list:
+  - listitem:
+    - link "Delivery Information"
+  - listitem:
+    - link "Refund Policy"
+  - listitem:
+    - link "Finance"
+  - listitem:
+    - link "Fabric Swatches"
+- separator
+- link "Trustpilot logo Star 4.5":
+  - img "Trustpilot logo"
+  - img "Star 4.5"
+- img "Payment Methods"
+- heading "Your Basket" [level=4]
+- link:
+  - img
+- text: No products in the basket.
+- link "View Wishlist"
+```
+
+# Test source
+
+```ts
+   1 | import { expect, Page } from '@playwright/test';
+   2 |
+   3 |
+   4 | export class HomePage {
+   5 |     constructor(private page: Page) {
+   6 |     this.page = page;
+   7 | }
+   8 |
+   9 | async navigate(url: string) {
+  10 |     try{
+  11 |         await this.page.goto(url,{waitUntil:'load'});
+  12 |     }catch(error){
+  13 |         console.log("Error in navigating to URL: "+url);
+  14 |     }
+  15 |     return url;
+  16 | }
+  17 |
+  18 | async isLogoVisible() {
+  19 |     const logo = await this.page.locator('#shopify-section-header-main-new').getByRole('link', { name: 'logo' });
+  20 |     return logo.isVisible();
+  21 | }
+  22 |
+  23 | async navbar(expectedNavbar: string[]) {
+  24 |     const menuAllItems: string[] = [];
+  25 |     for(const item of expectedNavbar){
+  26 |         const menuItem = await this.page.locator('li.megamenu-item',{ hasText:item });
+  27 |         await expect(menuItem).toBeVisible();  
+  28 |         await menuItem.hover({force:true});
+  29 |         await this.page.waitForLoadState('domcontentloaded');
+  30 |         const dropDown = await menuItem.locator('.menu-box');
+  31 |         menuAllItems.push(await menuItem.innerText());
+  32 |     }
+  33 |     return menuAllItems;
+  34 | }
+  35 |
+  36 | async searchByProductCategory(category: string) {
+  37 |     const searchBox=this.page.locator('input[type="text"]').first();
+  38 |     await searchBox.fill(category);
+  39 |     while (!await this.page.url().includes('search')) {
+  40 |         await searchBox.click();
+  41 |         await searchBox.press('Enter');
+  42 |         await this.page.waitForTimeout(1000);
+  43 |     }    
+  44 |     const currentUrl = await this.page.url();
+  45 |     return currentUrl;
+  46 | }
+  47 |  
+  48 | async searchByProductNameSuggestion(product: string, dropdown: string) {
+  49 |     const searchBox= this.page.locator('input[type="text"]').first();
+  50 |     searchBox.fill(product);
+  51 |     await searchBox.click();    
+> 52 |     await this.page.waitForSelector('li.boost-pfs-search-suggestion-header-suggestions',{state: 'visible'});
+     |                     ^ Error: page.waitForSelector: Test timeout of 60000ms exceeded.
+  53 |     const products = await this.page.locator('.boost-pfs-search-suggestion-product-title').all();
+  54 |     for (const product of products) {
+  55 |         const productText = await product.textContent();
+  56 |         if (productText && productText.trim().toLowerCase() === dropdown.trim().toLowerCase()) {
+  57 |             await product.click();
+  58 |             break;
+  59 |         }
+  60 |     }
+  61 |     await this.page.waitForLoadState('domcontentloaded');
+  62 |     
+  63 |     const currentUrl = await this.page.url();
+  64 |     return currentUrl;
+  65 | }
+  66 |
+  67 | async openCart() {
+  68 |     const cartLocator = await this.page.locator('#cart_block');
+  69 |     try {
+  70 |         await cartLocator.waitFor({ state: 'visible', timeout: 10000 });
+  71 |         await cartLocator.click({ force: true });
+  72 |     } catch (error) {
+  73 |         console.log(error.message);
+  74 |         return; 
+  75 |     }
+  76 |     let cartStatus = this.page.locator('div[class="empty"]');
+  77 |     if(await cartStatus.isVisible()){
+  78 |         await this.page.locator('a.close-cart').first().click();
+  79 |         return null;
+  80 |     }
+  81 |     else{
+  82 |         const currentUrl = await this.page.url();
+  83 |         return currentUrl;
+  84 |         // cartStatus = this.page.locator('div.cart-total');
+  85 |         // console.log("SOEMTHING  "+ cartStatus.innerText());
+  86 |         }
+  87 |     }
+  88 | }
+  89 |
+```

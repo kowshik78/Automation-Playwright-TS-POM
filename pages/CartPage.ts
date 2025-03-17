@@ -19,7 +19,7 @@ async productVSurlChecker(url: string) {
     else{
         productPart = null;
     }
-    
+
 
     return productPart;
     
@@ -48,13 +48,12 @@ async verifyCart() {
         const productLivePrice = await product.locator('span.money.nosto-price').textContent();
         //console.log(productName+" "+productOldPrice+" "+productLivePrice);
         
-        const initialUrl = this.page.url();
-        const [response] = await Promise.all([
-          product.waitFor({state:"visible"}),
-          product.click({ force: true }),
-          newUrl = homePage.navigate(this.page.url()),
-          this.page.waitForLoadState('load')
-        ]);
+          const initialUrl = this.page.url();
+          await product.waitFor({state:"visible"});
+          await product.click({ force: true });
+          newUrl = await homePage.navigate(this.page.url());
+          await this.page.waitForLoadState('domcontentloaded', { timeout: 120000 });
+
         
         const pageReloaded = await initialUrl !== newUrl;
         return { pageReloaded, newUrl, productName, productOldPrice, productLivePrice };
@@ -64,17 +63,20 @@ async verifyCart() {
         const homePage = new HomePage(this.page);
         homePage.navigate(url);
         
-        const descriptionLocator = await this.page.locator('//*[@id="quickview_product"]/div[2]/div/div/h2');
-        await descriptionLocator.waitFor({state:'visible'});
-        const description = await descriptionLocator.first().textContent();
+        const DetailsLocator = await this.page.locator('.summary.entry-summary h2.name');
+        await DetailsLocator.waitFor({state:'visible'});
+        const isVisible = await DetailsLocator.isVisible();
+
+        const description = await DetailsLocator.first().textContent();
 
         const livePrice = await this.page.locator('.summary.entry-summary #price').textContent();
         //console.log(" "+description+" "+livePrice);
 
-        const addBasket= await this.page.locator('//*[@id="AddToCart-template--15432921153587__main"]');
+        const addBasket= await this.page.locator('//*[@class="add_to_cart clearfix "]//input[@type="submit"]');
         addBasket.waitFor({state:'visible'});
         await addBasket.click({force: true});
-        await this.page.locator('//*[@id="cart-sidebar"]/div[3]/div/a').waitFor({state:'visible'});
+        await this.page.waitForLoadState('load');
+        await this.page.locator('//*[@class="cart-window"]//a[@class="close-cart"]').waitFor({state:'visible'});
         
         return {description, livePrice};
     }

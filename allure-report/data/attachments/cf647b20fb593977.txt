@@ -1,0 +1,2 @@
+Error in navigating to URL: https://www.daals.co.uk/
+_____TEST 2_____chair > https://www.daals.co.uk/search?q=chair

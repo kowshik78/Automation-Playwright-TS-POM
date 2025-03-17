@@ -1,0 +1,109 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Go to Homepage,Navbar, Homepage product add to cart
+- Location: C:\Users\kowshik\Desktop\AutomationAssignment\tests\homepage.test.ts:45:5
+
+# Error details
+
+```
+Error: page.waitForLoadState: Test timeout of 80000ms exceeded.
+=========================== logs ===========================
+  "commit" event fired
+  "domcontentloaded" event fired
+============================================================
+    at CartPage.productClickFromHomepage (C:\Users\kowshik\Desktop\AutomationAssignment\pages\CartPage.ts:56:21)
+    at C:\Users\kowshik\Desktop\AutomationAssignment\tests\homepage.test.ts:59:86
+```
+
+# Test source
+
+```ts
+   1 | import { expect, Page } from '@playwright/test';
+   2 | import { HomePage } from '../pages/HomePage';
+   3 |
+   4 | export class CartPage {
+   5 |     constructor(private page: Page) {
+   6 |         this.page = page;
+   7 | }
+   8 |
+   9 | async productVSurlChecker(url: string) {
+  10 |     let productPart;
+  11 |     if (url.includes('/products/')) {
+  12 |         let productPartWithoutUrl = url.split('/products/')[1];
+  13 |         productPart = productPartWithoutUrl.split('-').join(' ');
+  14 |     }
+  15 |     else if (url.includes('/search?q=')) {
+  16 |         let productPartWithoutUrl = url.split('/search?q=')[1];
+  17 |         productPart = productPartWithoutUrl.split('+').join(' ');
+  18 |     }
+  19 |     else{
+  20 |         productPart = null;
+  21 |     }
+  22 |     
+  23 |
+  24 |     return productPart;
+  25 |     
+  26 | }
+  27 |
+  28 | async verifyCart() {
+  29 |     const cart = await this.page.locator('//*[@id="cart_block"]');
+  30 |         await cart.waitFor({state:"visible"});
+  31 |         await cart.click({ force: true });
+  32 |         await this.page.locator('#cart-sidebar div').filter({ hasText: 'Your Basket' }).getByRole('link').click();
+  33 |         
+  34 |         return await cart.isVisible();
+  35 |     }
+  36 |     
+  37 |     async productClickFromHomepage(productIndex:String){
+  38 |         const product = this.page.locator('.indiv-product').first();
+  39 |         const productName = await product.locator('.indiv-product-title-text').textContent();
+  40 |         const homePage = new HomePage(this.page);
+  41 |         let newUrl;
+  42 |         
+  43 |         let productOldPrice = "No discount available";
+  44 |         if (await product.locator('span.money.nosto-list-price').isVisible()) {
+  45 |             productOldPrice = (await product.locator('span.money.nosto-list-price').textContent()) ?? "No discount available";
+  46 |         }
+  47 |         
+  48 |         const productLivePrice = await product.locator('span.money.nosto-price').textContent();
+  49 |         //console.log(productName+" "+productOldPrice+" "+productLivePrice);
+  50 |         
+  51 |         const initialUrl = this.page.url();
+  52 |         const [response] = await Promise.all([
+  53 |           product.waitFor({state:"visible"}),
+  54 |           product.click({ force: true }),
+  55 |           newUrl = homePage.navigate(this.page.url()),
+> 56 |           this.page.waitForLoadState('load')
+     |                     ^ Error: page.waitForLoadState: Test timeout of 80000ms exceeded.
+  57 |         ]);
+  58 |         
+  59 |         const pageReloaded = await initialUrl !== newUrl;
+  60 |         return { pageReloaded, newUrl, productName, productOldPrice, productLivePrice };
+  61 |     }
+  62 |     
+  63 |     async addToCartFromDetails(url:string){
+  64 |         const homePage = new HomePage(this.page);
+  65 |         homePage.navigate(url);
+  66 |         
+  67 |         const descriptionLocator = await this.page.locator('//*[@id="quickview_product"]/div[2]/div/div/h2');
+  68 |         await descriptionLocator.waitFor({state:'visible'});
+  69 |         const description = await descriptionLocator.first().textContent();
+  70 |
+  71 |         const livePrice = await this.page.locator('.summary.entry-summary #price').textContent();
+  72 |         //console.log(" "+description+" "+livePrice);
+  73 |
+  74 |         const addBasket= await this.page.locator('//*[@id="AddToCart-template--15432921153587__main"]');
+  75 |         addBasket.waitFor({state:'visible'});
+  76 |         await addBasket.click({force: true});
+  77 |         await this.page.locator('//*[@id="cart-sidebar"]/div[3]/div/a').waitFor({state:'visible'});
+  78 |         
+  79 |         return {description, livePrice};
+  80 |     }
+  81 | }
+```

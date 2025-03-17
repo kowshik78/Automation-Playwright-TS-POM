@@ -1,0 +1,895 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Go to Homepage,Navbar, Homepage product add to cart
+- Location: C:\Users\kowshik\Desktop\AutomationAssignment\tests\homepage.test.ts:46:5
+
+# Error details
+
+```
+Error: locator.waitFor: Test timeout of 120000ms exceeded.
+Call log:
+  - waiting for locator('//*[@id="cart-sidebar"]/div[3]/div/a') to be visible
+    - waiting for" https://www.daals.co.uk/products/egerie-curved-headboard-beige-boucle-ottoman-storage-bed?nosto=frontpage-nosto-1-fallback-nosto-1" navigation to finish...
+    - navigated to "https://www.daals.co.uk/products/egerie-curved-headboard-beige-boucle-ottoman-storage-bed?nosto=frontpage-nosto-1-fallback-nosto-1"
+
+    at CartPage.addToCartFromDetails (C:\Users\kowshik\Desktop\AutomationAssignment\pages\CartPage.ts:77:73)
+    at C:\Users\kowshik\Desktop\AutomationAssignment\tests\homepage.test.ts:63:38
+```
+
+# Page snapshot
+
+```yaml
+- paragraph:
+  - strong: WELCOME SPRING
+  - text: "| Explore New Styles |"
+  - link "SHOP NOW"
+- search:
+  - button:
+    - img
+  - combobox "When autocomplete results are available use up and down arrows to review and enter to select"
+- link "logo":
+  - img "logo"
+- paragraph: 02477 180 023
+- paragraph: 8:30am - 5.30pm
+- list:
+  - listitem:
+    - link:
+      - img
+  - listitem:
+    - link:
+      - img
+  - listitem:
+    - link "Basket":
+      - img
+      - text: Basket
+- list:
+  - listitem:
+    - link "Lounge"
+  - listitem:
+    - link "Dining"
+  - listitem:
+    - link "Bedroom"
+  - listitem:
+    - link "Storage"
+  - listitem:
+    - link "Office"
+  - listitem:
+    - link "Accessories"
+  - listitem:
+    - link "Garden"
+  - listitem:
+    - link "New"
+  - listitem:
+    - link "Offers"
+- link "Free Delivery over £99":
+  - img
+  - text: Free Delivery over £99
+- 'link "Star 4.5 Rated: Excellent"':
+  - img
+  - img "Star 4.5"
+  - text: "Rated: Excellent"
+- link "Exclusive Styles":
+  - img
+  - text: Exclusive Styles
+- link "30 Day Returns":
+  - img
+  - text: 30 Day Returns
+- list:
+  - link "Home -"
+  - link "daals"
+  - link "- Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+- figure:
+  - img
+  - link
+  - link "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed":
+    - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - link
+  - link
+  - img
+- text: 
+- img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+- img "files/JAH-011-BEIGE-BOUCLE_scene1.jpg"
+- img "files/JAH-011-BEIGE-BOUCLE_scene2.jpg"
+- img "files/JAH-011-CHART.png"
+- img "files/JAH-011-BEIGE-BOUCLE_WB1.jpg"
+- img "files/JAH-011-BEIGE-BOUCLE_WB2.jpg"
+- text: 
+- heading "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed" [level=2]
+- link "Star 1 out of 5 Star 2 out of 5 Star 3 out of 5 Star 4 out of 5 Star 5 out of 5 360 Reviews":
+  - img "Star 1 out of 5"
+  - img "Star 2 out of 5"
+  - img "Star 3 out of 5"
+  - img "Star 4 out of 5"
+  - img "Star 5 out of 5"
+  - text: 360 Reviews
+- text: Colour - Beige
+- link:
+  - img
+- link:
+  - img
+- link:
+  - img
+- link:
+  - img
+- text: Size Double King Super King £399.99
+- button "Add to Basket"
+- textbox: "1"
+- link ""
+- link ""
+- button ""
+- paragraph:
+  - paragraph:
+    - img
+    - text: In Stock
+- img "Free Deliver"
+- text: Free standard delivery
+- img
+- text: Want it by Friday, 21st March? Order with our fastest delivery method within 29 Mins 00 Secs
+- paragraph:
+  - img
+  - text: Return within 30 days
+- img
+- text: Interest free instalments from £99.99 with
+- img
+- text: or
+- img
+- heading "Customers also bought" [level=3]
+- img
+- link "Frances Woven Rattan 1-Door Bedside Table in Natural Colour":
+  - img "Frances Woven Rattan 1-Door Bedside Table in Natural Colour"
+- paragraph:
+  - link "Frances Woven Rattan 1-Door Bedside Table in Natural Colour"
+- text: £79.99
+- img
+- link "Frances Woven Rattan Dressing Table with Mirror, Natural":
+  - img "Frances Woven Rattan Dressing Table with Mirror, Natural"
+- paragraph:
+  - link "Frances Woven Rattan Dressing Table with Mirror, Natural"
+- text: £179.99
+- img
+- link "Leamington Deep-Buttoned Ottoman Storage Bench, Oatmeal Fabric":
+  - img "Leamington Deep-Buttoned Ottoman Storage Bench, Oatmeal Fabric"
+- paragraph:
+  - link "Leamington Deep-Buttoned Ottoman Storage Bench, Oatmeal Fabric"
+- text: £219.99
+- img
+- link "Frances Woven Rattan Chest of 6 Drawers, Natural":
+  - img "Frances Woven Rattan Chest of 6 Drawers, Natural"
+- paragraph:
+  - link "Frances Woven Rattan Chest of 6 Drawers, Natural"
+- text: £259.99
+- img
+- img
+- heading "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed" [level=1]
+- text: £399.99
+- link
+- button "Add to Basket"
+- heading "Frequently bought together" [level=2]
+- link:
+  - img
+- link "Memory Foam - Mattress"
+- text: £259.99
+- combobox:
+  - option "Single"
+  - option "Small Double"
+  - option "Double" [selected]
+  - option "King"
+- button "ADD TO BASKET"
+- link:
+  - img
+- link "Pocket Spring - Mattress"
+- text: £379.99
+- combobox:
+  - option "Single"
+  - option "Small Double"
+  - option "Double" [selected]
+  - option "King"
+  - option "Super King"
+- button "ADD TO BASKET"
+- link:
+  - img
+- link "Hybrid - Mattress"
+- text: £439.99
+- combobox:
+  - option "Single"
+  - option "Small Double"
+  - option "Double" [selected]
+  - option "King"
+  - option "Super King"
+- button "ADD TO BASKET"
+- link "Description"
+- link "Specifications"
+- link "Packaging"
+- link "Delivery"
+- list:
+  - listitem: Our Egerie bed features inviting curved silhouette, upholstered with sumptuous beige boucle fabric for a chic, cosy place to relax.
+  - listitem: Supporting the bed are four cute solid wood round legs with matte finish.
+  - listitem: Handcrafted curved headrest makes it a statement piece in the bedroom.
+  - listitem: Sprung solid wood slatted base provides a comfort foundation for your mattress.
+  - listitem: The ottoman can be easily lift up from foot end with gas lift mechanism.
+  - listitem: Hardwood and metal internal frame ensures the bed's durability.
+  - listitem: Flat packed, self-assembly required.
+  - listitem: The size featured in product images is 5FT King.
+  - listitem:
+    - strong: "Complete the look:"
+    - text: Pictured with our Egerie Beige Boucle Ottoman Bed is our popular
+    - link "Hampstead Curved Armchair in White Boucle":
+      - strong: Hampstead Curved Armchair in White Boucle
+    - text: ", our new"
+    - link "Maru Round Side Table in Oak":
+      - strong: Maru Round Side Table in Oak
+    - text: and our
+    - link "Pollie White Boucle Storage Stool":
+      - strong: Pollie White Boucle Storage Stool
+- heading "You may also like..." [level=2]
+- img
+- img
+- link "Helia Pleated Ottoman Storage Bed, Beige Boucle Helia Pleated Ottoman Storage Bed, Beige Boucle":
+  - img "Helia Pleated Ottoman Storage Bed, Beige Boucle"
+  - img "Helia Pleated Ottoman Storage Bed, Beige Boucle"
+  - img
+- button:
+  - img
+- link "Helia Pleated Ottoman Storage Bed, Beige Boucle £439.99":
+  - heading "Helia Pleated Ottoman Storage Bed, Beige Boucle" [level=3]
+  - text: £439.99
+- link "     4.9 star rating (73)"
+- list:
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+- link "Constance Winged Headboard Ottoman Storage Bed, Beige Linen Constance Winged Headboard Ottoman Storage Bed, Beige Linen":
+  - img "Constance Winged Headboard Ottoman Storage Bed, Beige Linen"
+  - img "Constance Winged Headboard Ottoman Storage Bed, Beige Linen"
+  - img
+- button:
+  - img
+- link "Constance Winged Headboard Ottoman Storage Bed, Beige Linen £649.99":
+  - heading "Constance Winged Headboard Ottoman Storage Bed, Beige Linen" [level=3]
+  - text: £649.99
+- link "     4.9 star rating (67)"
+- list:
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+- link "Hadley Champagne Velvet Ottoman Storage Bed Hadley Champagne Velvet Ottoman Storage Bed":
+  - img "Hadley Champagne Velvet Ottoman Storage Bed"
+  - img "Hadley Champagne Velvet Ottoman Storage Bed"
+  - img
+- button:
+  - img
+- link "Hadley Champagne Velvet Ottoman Storage Bed £439.99":
+  - heading "Hadley Champagne Velvet Ottoman Storage Bed" [level=3]
+  - text: £439.99
+- link "     4.8 star rating (103)"
+- list:
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+- link "Hadley Stone Fabric Ottoman Storage Bed Hadley Stone Fabric Ottoman Storage Bed":
+  - img "Hadley Stone Fabric Ottoman Storage Bed"
+  - img "Hadley Stone Fabric Ottoman Storage Bed"
+  - img
+- button:
+  - img
+- link "Hadley Stone Fabric Ottoman Storage Bed £439.99":
+  - heading "Hadley Stone Fabric Ottoman Storage Bed" [level=3]
+  - text: £439.99
+- link "     4.8 star rating (103)"
+- list:
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+- link "Wilton Warm Stone Fabric Ottoman Storage Bed Wilton Warm Stone Fabric Ottoman Storage Bed":
+  - img "Wilton Warm Stone Fabric Ottoman Storage Bed"
+  - img "Wilton Warm Stone Fabric Ottoman Storage Bed"
+  - img
+- button:
+  - img
+- link "Wilton Warm Stone Fabric Ottoman Storage Bed £469.99":
+  - heading "Wilton Warm Stone Fabric Ottoman Storage Bed" [level=3]
+  - text: £469.99
+- link "     4.9 star rating (123)"
+- list:
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+- button "Reviews"
+- button "Questions 6"
+- region "customer reviews":
+  - img
+  - img
+  - img
+  - img
+  - img
+  - text: 4.9 out of 5 stars 360 total reviews
+  - button "See reviews summary"
+  - button "5 star by 331 reviews":
+    - img
+  - button "4 star by 29 reviews":
+    - img
+  - button "3 star by 0 reviews":
+    - img
+  - button "2 star by 0 reviews":
+    - img
+  - button "1 star by 0 reviews":
+    - img
+  - button "Write A Review"
+  - combobox:
+    - textbox "Rating"
+    - img
+    - text: Rating
+  - button "Search reviews with media":
+    - text: With media
+    - img
+  - text: Popular topics
+  - checkbox "height"
+  - checkbox "frame"
+  - checkbox "instructions"
+  - checkbox "colour"
+  - checkbox "fabric"
+  - checkbox "assembly"
+  - checkbox "quality"
+  - checkbox "fits"
+  - button "Show more"
+  - text: Sort by
+  - combobox "Sort by:":
+    - text: "Sort by: With media"
+    - img
+  - text: florence m. Verified Buyer
+  - img "5 star rating out of 5 stars":
+    - img
+    - img
+    - img
+    - img
+    - img
+  - text: This bed is stunning , This bed is stunning , I wasn’t sure what to expect but the quality of the material is 10/10, love the colour and suites my aesthetic just perfectly honestly it’s such a vibe 👌🏿 the storage feature is fantastic for storage very very spacious so far have not had any issues lifting up and back down would...
+  - button "read more about content This bed is stunning , I wasn’t": Read more
+  - button "Video of Review by florence m. on March 13, 25 number 1"
+  - img
+  - button "Video of Review by florence m. on March 13, 25 number 2"
+  - img
+  - button "Video of Review by florence m. on March 13, 25 number 3"
+  - img
+  - button "Video of Review by florence m. on March 13, 25 number 5"
+  - img
+  - text: +2 Published date 13/03/25
+  - group "Did you find this review helpful?":
+    - text: Did you find this review helpful?
+    - button "This review was helpful":
+      - img
+    - text: "0"
+    - button "This review was not helpful":
+      - img
+    - text: "0"
+  - text: Carys T. Verified Buyer
+  - img "5 star rating out of 5 stars":
+    - img
+    - img
+    - img
+    - img
+    - img
+  - text: Bedroom update Gorgeous bed, feels very high quality. Assembling wasn’t to bad but I would say 2 people are required
+  - button "Image of Review by Carys T. on March 06, 25 number 1"
+  - text: "Product Reviewed:"
+  - button "Egerie Curved Headboard Slate Blue Striped Fabric..."
+  - text: Published date 06/03/25
+  - group "Did you find this review helpful?":
+    - text: Did you find this review helpful?
+    - button "This review was helpful":
+      - img
+    - text: "0"
+    - button "This review was not helpful":
+      - img
+    - text: "0"
+  - text: lisa k. Verified Buyer
+  - img "4 star rating out of 5 stars":
+    - img
+    - img
+    - img
+    - img
+    - img
+  - text: Smart and cute . . love Smart and cute . . love this bed
+  - button "Image of Review by lisa k. on February 27, 25 number 1"
+  - text: "Product Reviewed:"
+  - button "Egerie Curved Headboard Light Taupe Striped Fabric..."
+  - text: Published date 27/02/25
+  - group "Did you find this review helpful?":
+    - text: Did you find this review helpful?
+    - button "This review was helpful":
+      - img
+    - text: "0"
+    - button "This review was not helpful":
+      - img
+    - text: "0"
+  - text: Edie D. Verified Buyer
+  - img "5 star rating out of 5 stars":
+    - img
+    - img
+    - img
+    - img
+    - img
+  - text: Lovely bed and good value. Lovely bed and good value. Headboard obviously not the highest quality as it is a low price, but for what you get it looks pretty good.
+  - button "Image of Review by Edie D. on February 18, 25 number 1"
+  - text: "Product Reviewed:"
+  - button "Egerie Curved Headboard Light Taupe Striped Fabric..."
+  - text: Published date 18/02/25
+  - group "Did you find this review helpful?":
+    - text: Did you find this review helpful?
+    - button "This review was helpful":
+      - img
+    - text: "0"
+    - button "This review was not helpful":
+      - img
+    - text: "0"
+  - text: Claire B. Verified Buyer
+  - img "5 star rating out of 5 stars":
+    - img
+    - img
+    - img
+    - img
+    - img
+  - text: Beautiful bed, great quality and Beautiful bed, great quality and service from Daals was amazing as always! Could Not recommend more!
+  - button "Image of Review by Claire B. on January 30, 25 number 1"
+  - text: "Product Reviewed:"
+  - button "Egerie Curved Headboard Slate Blue Striped Fabric..."
+  - text: Published date 30/01/25
+  - group "Did you find this review helpful?":
+    - text: Did you find this review helpful?
+    - button "This review was helpful":
+      - img
+    - text: "2"
+    - button "This review was not helpful":
+      - img
+    - text: "0"
+  - navigation:
+    - button "Goto previous page" [disabled]:
+      - img
+    - list:
+      - listitem:
+        - button "Page 1": "1"
+      - listitem:
+        - button "Goto Page 2": "2"
+      - listitem:
+        - button "Goto Page 3": "3"
+      - listitem:
+        - button "Goto Page 4": "4"
+      - listitem:
+        - button "Goto Page 5": "5"
+    - button "Goto next page":
+      - img
+- heading "Be a daaling" [level=1]
+- paragraph: Tag or mention us to be featured
+- heading "Slideshow" [level=4]
+- text: Slide controls
+- button "Add your own image. Click on the button to upload an image and fill in the required details on the pop-up":  share your snaps
+- button "Previous": 
+- button "Next": 
+- list:
+  - listitem "Photo from a Shopper":
+    - button "image number 1":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 2Egerie Curved Headboard Beige Boucle Ottoman Storage Bed":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed Love the bed!"
+  - listitem "Photo from a Shopper":
+    - button "image number 3":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 4":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 5":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 6":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 7": 
+  - listitem "Photo from a Shopper":
+    - button "image number 8":
+      - img "Egerie Curved Headboard Slate Blue Striped Fabric Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 9":
+      - img "Egerie Curved Headboard Slate Blue Striped Fabric Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 10":
+      - img "Egerie Curved Headboard Slate Blue Striped Fabric Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 11":
+      - img "Egerie Curved Headboard Slate Blue Striped Fabric Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 12": 
+  - listitem "Photo from a Shopper":
+    - button "image number 13":
+      - img "Egerie Curved Headboard Slate Blue Striped Fabric Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 14":
+      - img "Egerie Curved Headboard Slate Blue Striped Fabric Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 15":
+      - img "Egerie Curved Headboard Slate Blue Striped Fabric Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 16":
+      - img "Egerie Curved Headboard Slate Blue Striped Fabric Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 17":
+      - img "Egerie Curved Headboard Slate Blue Striped Fabric Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 18":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 19": 
+  - listitem "Photo from a Shopper":
+    - button "image number 20": 
+  - listitem "Photo from a Shopper":
+    - button "image number 21": 
+  - listitem "Photo from a Shopper":
+    - button "image number 22": 
+  - listitem "Photo from a Shopper":
+    - button "image number 23":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 24":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 25": 
+  - listitem "Photo from a Shopper":
+    - button "image number 26":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 27":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 28":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 29":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 30":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 31":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 32":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 33":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 34":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 35":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 36":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 37":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 38":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 39":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 40":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 41":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 42Egerie Curved Headboard Beige Boucle Ottoman Storage Bed":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed Love the bed!"
+  - listitem "Photo from a Shopper":
+    - button "image number 43":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 44":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 45":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 46":
+      - img "Egerie Curved Headboard Beige Boucle Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 47": 
+  - listitem "Photo from a Shopper":
+    - button "image number 48":
+      - img "Egerie Curved Headboard Slate Blue Striped Fabric Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 49":
+      - img "Egerie Curved Headboard Slate Blue Striped Fabric Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 50":
+      - img "Egerie Curved Headboard Slate Blue Striped Fabric Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 51":
+      - img "Egerie Curved Headboard Slate Blue Striped Fabric Ottoman Storage Bed"
+  - listitem "Photo from a Shopper":
+    - button "image number 52": 
+- heading "We thought you might like these ..." [level=2]
+- img
+- img
+- link "Constance Winged Headboard Ottoman Storage Bed, Olive Linen Constance Winged Headboard Ottoman Storage Bed, Olive Linen":
+  - img "Constance Winged Headboard Ottoman Storage Bed, Olive Linen"
+  - img "Constance Winged Headboard Ottoman Storage Bed, Olive Linen"
+  - img
+- button:
+  - img
+- link "Constance Winged Headboard Ottoman Storage Bed, Olive Linen £649.99":
+  - heading "Constance Winged Headboard Ottoman Storage Bed, Olive Linen" [level=3]
+  - text: £649.99
+- link "     4.9 star rating (67)"
+- list:
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+- link "Archer Taupe Boucle Ottoman Storage Bed Archer Taupe Boucle Ottoman Storage Bed":
+  - img "Archer Taupe Boucle Ottoman Storage Bed"
+  - img "Archer Taupe Boucle Ottoman Storage Bed"
+  - img
+- button:
+  - img
+- link "Archer Taupe Boucle Ottoman Storage Bed £389.99":
+  - heading "Archer Taupe Boucle Ottoman Storage Bed" [level=3]
+  - text: £389.99
+- link "     4.9 star rating (336)"
+- list:
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem: "+1"
+- link "Elystan Oval Headboard Upholstered Bed, Warm Beige Fabric Elystan Oval Headboard Upholstered Bed, Warm Beige Fabric":
+  - img "Elystan Oval Headboard Upholstered Bed, Warm Beige Fabric"
+  - img "Elystan Oval Headboard Upholstered Bed, Warm Beige Fabric"
+  - img
+- button:
+  - img
+- link "Elystan Oval Headboard Upholstered Bed, Warm Beige Fabric £569.99":
+  - heading "Elystan Oval Headboard Upholstered Bed, Warm Beige Fabric" [level=3]
+  - text: £569.99
+- link "     5.0 star rating (12)"
+- list:
+  - listitem:
+    - img
+  - listitem:
+    - img
+- link "Archer White Boucle Ottoman Storage Bed Archer White Boucle Ottoman Storage Bed":
+  - img "Archer White Boucle Ottoman Storage Bed"
+  - img "Archer White Boucle Ottoman Storage Bed"
+  - img
+- button:
+  - img
+- link "Archer White Boucle Ottoman Storage Bed £389.99":
+  - heading "Archer White Boucle Ottoman Storage Bed" [level=3]
+  - text: £389.99
+- link "     4.9 star rating (336)"
+- list:
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem: "+1"
+- link "Hampstead Taupe Boucle Curved Bed with 4-Drawer Storage Hampstead Taupe Boucle Curved Bed with 4-Drawer Storage":
+  - img "Hampstead Taupe Boucle Curved Bed with 4-Drawer Storage"
+  - img "Hampstead Taupe Boucle Curved Bed with 4-Drawer Storage"
+  - img
+- button:
+  - img
+- link "Hampstead Taupe Boucle Curved Bed with 4-Drawer Storage £489.99":
+  - heading "Hampstead Taupe Boucle Curved Bed with 4-Drawer Storage" [level=3]
+  - text: £489.99
+- link "     4.9 star rating (72)"
+- list:
+  - listitem:
+    - img
+  - listitem:
+    - img
+- heading "LET'S STAY IN TOUCH" [level=2]
+- text: Email
+- textbox "Email"
+- button "SUBSCRIBE"
+- link:
+  - img
+- link:
+  - img
+- link:
+  - img
+- link:
+  - img
+- separator
+- heading "About us" [level=3]
+- list:
+  - listitem:
+    - link "About daals"
+  - listitem:
+    - link "Customer Reviews"
+  - listitem:
+    - link "Terms & Conditions"
+  - listitem:
+    - link "Privacy Policy"
+  - listitem:
+    - link "Blog"
+- heading "Customer care" [level=3]
+- list:
+  - listitem:
+    - link "Contact Us"
+  - listitem:
+    - link "Returns Policy"
+  - listitem:
+    - link "Warranty"
+  - listitem:
+    - link "FAQs"
+- heading "Your order" [level=3]
+- list:
+  - listitem:
+    - link "Delivery Information"
+  - listitem:
+    - link "Refund Policy"
+  - listitem:
+    - link "Finance"
+  - listitem:
+    - link "Fabric Swatches"
+- separator
+- link "Trustpilot logo Star 4.5":
+  - img "Trustpilot logo"
+  - img "Star 4.5"
+- img "Payment Methods"
+- heading "Your Basket" [level=4]
+- link:
+  - img
+- text: No products in the basket.
+- link "View Wishlist"
+```
+
+# Test source
+
+```ts
+   1 | import { expect, Page } from '@playwright/test';
+   2 | import { HomePage } from '../pages/HomePage';
+   3 |
+   4 | export class CartPage {
+   5 |     constructor(private page: Page) {
+   6 |         this.page = page;
+   7 | }
+   8 |
+   9 | async productVSurlChecker(url: string) {
+  10 |     let productPart;
+  11 |     if (url.includes('/products/')) {
+  12 |         let productPartWithoutUrl = url.split('/products/')[1];
+  13 |         productPart = productPartWithoutUrl.split('-').join(' ');
+  14 |     }
+  15 |     else if (url.includes('/search?q=')) {
+  16 |         let productPartWithoutUrl = url.split('/search?q=')[1];
+  17 |         productPart = productPartWithoutUrl.split('+').join(' ');
+  18 |     }
+  19 |     else{
+  20 |         productPart = null;
+  21 |     }
+  22 |
+  23 |
+  24 |     return productPart;
+  25 |     
+  26 | }
+  27 |
+  28 | async verifyCart() {
+  29 |     const cart = await this.page.locator('//*[@id="cart_block"]');
+  30 |         await cart.waitFor({state:"visible"});
+  31 |         await cart.click({ force: true });
+  32 |         await this.page.locator('#cart-sidebar div').filter({ hasText: 'Your Basket' }).getByRole('link').click();
+  33 |         
+  34 |         return await cart.isVisible();
+  35 |     }
+  36 |     
+  37 |     async productClickFromHomepage(productIndex:String){
+  38 |         const product = this.page.locator('.indiv-product').first();
+  39 |         const productName = await product.locator('.indiv-product-title-text').textContent();
+  40 |         const homePage = new HomePage(this.page);
+  41 |         let newUrl;
+  42 |         
+  43 |         let productOldPrice = "No discount available";
+  44 |         if (await product.locator('span.money.nosto-list-price').isVisible()) {
+  45 |             productOldPrice = (await product.locator('span.money.nosto-list-price').textContent()) ?? "No discount available";
+  46 |         }
+  47 |         
+  48 |         const productLivePrice = await product.locator('span.money.nosto-price').textContent();
+  49 |         //console.log(productName+" "+productOldPrice+" "+productLivePrice);
+  50 |         
+  51 |           const initialUrl = this.page.url();
+  52 |           await product.waitFor({state:"visible"});
+  53 |           await product.click({ force: true });
+  54 |           newUrl = await homePage.navigate(this.page.url());
+  55 |           await this.page.waitForLoadState('domcontentloaded', { timeout: 120000 });
+  56 |
+  57 |         
+  58 |         const pageReloaded = await initialUrl !== newUrl;
+  59 |         return { pageReloaded, newUrl, productName, productOldPrice, productLivePrice };
+  60 |     }
+  61 |     
+  62 |     async addToCartFromDetails(url:string){
+  63 |         const homePage = new HomePage(this.page);
+  64 |         homePage.navigate(url);
+  65 |         
+  66 |         const descriptionLocator = await this.page.locator('//*[@id="quickview_product"]/div[2]/div/div/h2');
+  67 |         await descriptionLocator.waitFor({state:'visible'});
+  68 |         const description = await descriptionLocator.first().textContent();
+  69 |
+  70 |         const livePrice = await this.page.locator('.summary.entry-summary #price').textContent();
+  71 |         //console.log(" "+description+" "+livePrice);
+  72 |
+  73 |         const addBasket= await this.page.locator('//*[@id="AddToCart-template--15432921153587__main"]');
+  74 |         addBasket.waitFor({state:'visible'});
+  75 |         await addBasket.click({force: true});
+  76 |         await this.page.waitForLoadState('load');
+> 77 |         await this.page.locator('//*[@id="cart-sidebar"]/div[3]/div/a').waitFor({state:'visible'});
+     |                                                                         ^ Error: locator.waitFor: Test timeout of 120000ms exceeded.
+  78 |         
+  79 |         return {description, livePrice};
+  80 |     }
+  81 | }
+```

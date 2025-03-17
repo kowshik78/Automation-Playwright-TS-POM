@@ -1,0 +1,508 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Go to Homepage,logo verify, search for product, choose from dropdown
+- Location: C:\Users\kowshik\Desktop\AutomationAssignment\tests\homepage.test.ts:7:5
+
+# Error details
+
+```
+Error: page.waitForLoadState: Test timeout of 60000ms exceeded.
+=========================== logs ===========================
+  "domcontentloaded" event fired
+============================================================
+    at HomePage.searchByProductNameSuggestion (C:\Users\kowshik\Desktop\AutomationAssignment\pages\HomePage.ts:61:21)
+    at C:\Users\kowshik\Desktop\AutomationAssignment\tests\homepage.test.ts:17:32
+```
+
+# Page snapshot
+
+```yaml
+- paragraph:
+  - strong: WELCOME SPRING
+  - text: "| Explore New Styles |"
+  - link "SHOP NOW"
+- search:
+  - button:
+    - img
+  - textbox "What are you looking for?"
+- link "logo":
+  - img "logo"
+- paragraph: 02477 180 023
+- paragraph: 8:30am - 5.30pm
+- list:
+  - listitem:
+    - link:
+      - img
+  - listitem:
+    - link:
+      - img
+  - listitem:
+    - link "Basket":
+      - img
+      - text: Basket
+- list:
+  - listitem:
+    - link "Lounge"
+  - listitem:
+    - link "Dining"
+  - listitem:
+    - link "Bedroom"
+  - listitem:
+    - link "Storage"
+  - listitem:
+    - link "Office"
+  - listitem:
+    - link "Accessories"
+  - listitem:
+    - link "Garden"
+  - listitem:
+    - link "New"
+  - listitem:
+    - link "Offers"
+- link "Free Delivery over £99":
+  - img
+  - text: Free Delivery over £99
+- 'link "Star 4.5 Rated: Excellent"':
+  - img
+  - img "Star 4.5"
+  - text: "Rated: Excellent"
+- link "Exclusive Styles":
+  - img
+  - text: Exclusive Styles
+- link "30 Day Returns":
+  - img
+  - text: 30 Day Returns
+- list:
+  - link "Home -"
+  - link "daals"
+  - link "- Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+- text: Sale
+- figure:
+  - img
+  - link "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat":
+    - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - img
+- text: 
+- img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+- img "products/XN-2003B-NATGREY_WB1.jpg"
+- img "files/XN-2003B-CHART.png"
+- img "products/XN-2003B-NATGREY_WB2.jpg"
+- img "products/XN-2003B-NATGREY_WB3.jpg"
+- img "products/XN-2003B-NATGREY_WB4.jpg"
+- text: 
+- heading "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat" [level=2]
+- link
+- text: £129.99 £139.99
+- button "Add to Basket"
+- textbox: "1"
+- link ""
+- link ""
+- paragraph:
+  - img
+  - text: In Stock
+- img "Free Deliver"
+- text: Free standard delivery
+- paragraph:
+  - img
+  - text: Return within 30 days
+- img
+- text: Interest free instalments from £32.49 with
+- img
+- text: or
+- img
+- heading "Customers also bought" [level=3]
+- paragraph
+- text: £169.99
+- paragraph
+- text: £169.99
+- paragraph
+- text: £129.99
+- paragraph
+- text: £139.99
+- img
+- img
+- heading "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat" [level=1]
+- text: £129.99
+- link
+- button "Add to Basket"
+- link "Description"
+- link "Specifications"
+- link "Packaging"
+- link "Delivery"
+- list:
+  - listitem: Made from solid elm wood, our Bordon Rattan folding chair is inspired by classic design and updated with practical folding design to make it stylish yet space-saving friendly.
+  - listitem: The cane rattan panels are hand woven, paired with comfortable padded upholstered seat pad in grey colour.
+  - listitem: "Size: W 60.5 x D 64 x H 76 cm. Seat height: 47 cm."
+  - listitem: The chair is so easy to set up for use - just unfold it; and so easy to store away - just fold it up. It's ideal as as functional dining chair, or accent piece in your living space.
+- heading "You may also like..." [level=2]
+- img
+- img
+- link "Frances Set of 2 Folding Cane Rattan Chairs, Black Colour Frances Set of 2 Folding Cane Rattan Chairs, Black Colour":
+  - img "Frances Set of 2 Folding Cane Rattan Chairs, Black Colour"
+  - img "Frances Set of 2 Folding Cane Rattan Chairs, Black Colour"
+  - img
+- button:
+  - img
+- link "Frances Set of 2 Folding Cane Rattan Chairs, Black Colour £179.99 £169.99":
+  - heading "Frances Set of 2 Folding Cane Rattan Chairs, Black Colour" [level=3]
+  - text: £179.99 £169.99
+- link
+- list:
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+- link "Frances Set of 2 Folding Cane Rattan Chairs, White Frances Set of 2 Folding Cane Rattan Chairs, White":
+  - img "Frances Set of 2 Folding Cane Rattan Chairs, White"
+  - img "Frances Set of 2 Folding Cane Rattan Chairs, White"
+  - img
+- button:
+  - img
+- link "Frances Set of 2 Folding Cane Rattan Chairs, White £179.99 £169.99":
+  - heading "Frances Set of 2 Folding Cane Rattan Chairs, White" [level=3]
+  - text: £179.99 £169.99
+- link
+- list:
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+- link "Frances Set of 2 Folding Cane Rattan Chairs, Mint Frances Set of 2 Folding Cane Rattan Chairs, Mint":
+  - img "Frances Set of 2 Folding Cane Rattan Chairs, Mint"
+  - img "Frances Set of 2 Folding Cane Rattan Chairs, Mint"
+  - img
+- button:
+  - img
+- link "Frances Set of 2 Folding Cane Rattan Chairs, Mint £179.99 £169.99":
+  - heading "Frances Set of 2 Folding Cane Rattan Chairs, Mint" [level=3]
+  - text: £179.99 £169.99
+- link
+- list:
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+  - listitem:
+    - img
+- button "Reviews"
+- button "Questions"
+- region "customer reviews"
+- heading "Be a daaling" [level=1]
+- paragraph: Tag or mention us to be featured
+- heading "Slideshow" [level=4]
+- text: Slide controls
+- button "Add your own image. Click on the button to upload an image and fill in the required details on the pop-up":  share your snaps
+- button "Previous": 
+- button "Next": 
+- list:
+  - listitem "Photo from a Shopper":
+    - button "image number 1Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat Stunning chair I can’t believe the price"
+  - listitem "Photo from a Shopper":
+    - button "image number 2":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 3":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 4":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 5Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat Love this chair!"
+  - listitem "Photo from a Shopper":
+    - button "image number 6":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 7":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 8":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 9": 
+  - listitem "Photo from a Shopper":
+    - button "image number 10":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 11":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 12":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 13":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 14":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 15":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 16": 
+  - listitem "Photo from a Shopper":
+    - button "image number 17":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 18":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 19": 
+  - listitem "Photo from a Shopper":
+    - button "image number 20": 
+  - listitem "Photo from a Shopper":
+    - button "image number 21":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 22Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat Great quality 100% great buy!"
+  - listitem "Photo from a Shopper":
+    - button "image number 23Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat Great quality 100% great buy!"
+  - listitem "Photo from a Shopper":
+    - button "image number 24Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat Quality folding chair"
+  - listitem "Photo from a Shopper":
+    - button "image number 25Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat Great chair to sit on and look at!"
+  - listitem "Photo from a Shopper":
+    - button "image number 26Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat Elegant and spacious folding chair"
+  - listitem "Photo from a Shopper":
+    - button "image number 27":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 28":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 29Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat First off, I am a"
+  - listitem "Photo from a Shopper":
+    - button "image number 30Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat Versatile chair"
+  - listitem "Photo from a Shopper":
+    - button "image number 31":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 32":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 33":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 34":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 35":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 36":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 37Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat We love these chairs! The"
+  - listitem "Photo from a Shopper":
+    - button "image number 38":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 39":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 40":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 41Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat Stunning chair I can’t believe the price"
+  - listitem "Photo from a Shopper":
+    - button "image number 42":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 43":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 44":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 45Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat Love this chair!"
+  - listitem "Photo from a Shopper":
+    - button "image number 46":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 47":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 48":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 49": 
+  - listitem "Photo from a Shopper":
+    - button "image number 50":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 51":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+  - listitem "Photo from a Shopper":
+    - button "image number 52":
+      - img "Bordon Natural Cane Rattan Folding Chair with Grey Upholstered Seat"
+- heading "LET'S STAY IN TOUCH" [level=2]
+- text: Email
+- textbox "Email"
+- button "SUBSCRIBE"
+- link:
+  - img
+- link:
+  - img
+- link:
+  - img
+- link:
+  - img
+- separator
+- heading "About us" [level=3]
+- list:
+  - listitem:
+    - link "About daals"
+  - listitem:
+    - link "Customer Reviews"
+  - listitem:
+    - link "Terms & Conditions"
+  - listitem:
+    - link "Privacy Policy"
+  - listitem:
+    - link "Blog"
+- heading "Customer care" [level=3]
+- list:
+  - listitem:
+    - link "Contact Us"
+  - listitem:
+    - link "Returns Policy"
+  - listitem:
+    - link "Warranty"
+  - listitem:
+    - link "FAQs"
+- heading "Your order" [level=3]
+- list:
+  - listitem:
+    - link "Delivery Information"
+  - listitem:
+    - link "Refund Policy"
+  - listitem:
+    - link "Finance"
+  - listitem:
+    - link "Fabric Swatches"
+- separator
+- link "Trustpilot logo Star 4.5":
+  - img "Trustpilot logo"
+  - img "Star 4.5"
+- img "Payment Methods"
+- heading "Your Basket" [level=4]
+- link:
+  - img
+- text: No products in the basket.
+- link "View Wishlist"
+```
+
+# Test source
+
+```ts
+   1 | import { expect, Page } from '@playwright/test';
+   2 |
+   3 |
+   4 | export class HomePage {
+   5 |     constructor(private page: Page) {
+   6 |     this.page = page;
+   7 | }
+   8 |
+   9 | async navigate(url: string) {
+  10 |     try{
+  11 |         await this.page.goto(url,{waitUntil:'load'});
+  12 |     }catch(error){
+  13 |         console.log("Error in navigating to URL: "+url);
+  14 |     }
+  15 |     return url;
+  16 | }
+  17 |
+  18 | async isLogoVisible() {
+  19 |     const logo = await this.page.locator('#shopify-section-header-main-new').getByRole('link', { name: 'logo' });
+  20 |     return logo.isVisible();
+  21 | }
+  22 |
+  23 | async navbar(expectedNavbar: string[]) {
+  24 |     const menuAllItems: string[] = [];
+  25 |     for(const item of expectedNavbar){
+  26 |         const menuItem = await this.page.locator('li.megamenu-item',{ hasText:item });
+  27 |         await expect(menuItem).toBeVisible();  
+  28 |         await menuItem.hover({force:true});
+  29 |         await this.page.waitForLoadState('domcontentloaded');
+  30 |         const dropDown = await menuItem.locator('.menu-box');
+  31 |         menuAllItems.push(await menuItem.innerText());
+  32 |     }
+  33 |     return menuAllItems;
+  34 | }
+  35 |
+  36 | async searchByProductCategory(category: string) {
+  37 |     const searchBox=this.page.locator('input[type="text"]').first();
+  38 |     await searchBox.fill(category);
+  39 |     while (!await this.page.url().includes('search')) {
+  40 |         await searchBox.click();
+  41 |         await searchBox.press('Enter');
+  42 |         await this.page.waitForTimeout(1000);
+  43 |     }    
+  44 |     const currentUrl = await this.page.url();
+  45 |     return currentUrl;
+  46 | }
+  47 |  
+  48 | async searchByProductNameSuggestion(product: string, dropdown: string) {
+  49 |     const searchBox= this.page.locator('input[type="text"]').first();
+  50 |     searchBox.fill(product);
+  51 |     await searchBox.click();    
+  52 |     await this.page.waitForSelector('li.boost-pfs-search-suggestion-header-suggestions',{state: 'visible'});
+  53 |     const products = await this.page.locator('.boost-pfs-search-suggestion-product-title').all();
+  54 |     for (const product of products) {
+  55 |         const productText = await product.textContent();
+  56 |         if (productText && productText.trim().toLowerCase() === dropdown.trim().toLowerCase()) {
+  57 |             await product.click();
+  58 |             break;
+  59 |         }
+  60 |     }
+> 61 |     await this.page.waitForLoadState('load');
+     |                     ^ Error: page.waitForLoadState: Test timeout of 60000ms exceeded.
+  62 |     
+  63 |     const currentUrl = await this.page.url();
+  64 |     return currentUrl;
+  65 | }
+  66 |
+  67 | async openCart() {
+  68 |     await this.page.locator('#cart_block').click({force:true});
+  69 |     let cartStatus = this.page.locator('div[class="empty"]');
+  70 |     if(await cartStatus.isVisible()){
+  71 |         await this.page.locator('a.close-cart').first().click();
+  72 |         return null;
+  73 |     }
+  74 |     else{
+  75 |         const currentUrl = await this.page.url();
+  76 |         return currentUrl;
+  77 |         // cartStatus = this.page.locator('div.cart-total');
+  78 |         // console.log("SOEMTHING  "+ cartStatus.innerText());
+  79 |         }
+  80 |     }
+  81 | }
+  82 |
+```
