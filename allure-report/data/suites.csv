@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","45930","Go to Homepage,logo verify, search for product, choose from dropdown","chromium","Mon Mar 17 17:55:15 BDT 2025","passed","Mon Mar 17 17:56:00 BDT 2025","","homepage.test.ts","",""
+"","25990","Go to Homepage,logo verify, search for product wise Category","chromium","Mon Mar 17 17:55:15 BDT 2025","passed","Mon Mar 17 17:55:41 BDT 2025","","homepage.test.ts","",""
+"","46592","Go to Homepage,Navbar, Homepage product add to cart","chromium","Mon Mar 17 17:55:15 BDT 2025","passed","Mon Mar 17 17:56:01 BDT 2025","","homepage.test.ts","",""
