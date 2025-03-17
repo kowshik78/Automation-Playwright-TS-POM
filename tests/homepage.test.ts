@@ -22,19 +22,17 @@ test('Go to Homepage,logo verify, search for product, choose from dropdown', asy
     console.log("______TEST 1______ " + dropdownProductUrl);
 });
 
-test.only('Go to Homepage,logo verify, search for product wise Category', async ({ page }) => {
+test('Go to Homepage,logo verify, search for product wise Category', async ({ page }) => {
     const homePage = new HomePage(page);
     const cartPage = new CartPage(page);
     const{url, searchProduct} = TestData.pageData;
 
     await homePage.navigate(url);      
-    // expect(page.url()).toBe(url);
-    // const logo = await homePage.isLogoVisible();  
-    // expect(logo).toBeTruthy();
+    expect(page.url()).toBe(url);
+    const logo = await homePage.isLogoVisible();  
+    expect(logo).toBeTruthy();
 
     const productUrl = await homePage.searchByProductCategory(searchProduct);
-    //await homePage.navigate(productUrl);
-    console.log("TESTURL  :  "+productUrl);
     const productUrlVerify = await cartPage.productVSurlChecker(productUrl);
     expect(productUrlVerify).toContain(searchProduct);
     
