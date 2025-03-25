@@ -12,7 +12,8 @@ This repository contains a Playwright-based test automation framework designed t
 ## Prerequisites
 * Node.js (v12 or higher)
 * npm (v6 or higher)
-* Playwright (v1.XX or higher)
+* Playwright
+* Allure Commandline (for generating Allure reports)
 
 ## Project Setup
 * Clone the repository
@@ -21,6 +22,22 @@ This repository contains a Playwright-based test automation framework designed t
 * Run tests using Playwright Test Runner:
 ```
 npx playwright test
+```
+
+## Allure Report Setup 
+* Install Allure Playwright Reporter and Allure Commandline:**
+``
+npm install -D allure-playwright
+npm install -D allure-commandline
+``
+* Generate Allure Report after test execution:**
+```
+npx playwright test
+npx allure generate allure-results --clean -o allure-report
+```
+* Open the Allure Report:**
+```
+npx allure open allure-report
 ```
 
 ## Configuration Setup 
@@ -48,7 +65,6 @@ projects: [<br>
     {  name: 'webkit',   use: { ...devices['Desktop Safari'] },  },<br>
 });<br>
 ```
-
 ## Understanding the File Structure
 **1. pages/HomePage.ts**
 * Handles homepage interactions such as navigation, logo verification, navbar interactions, and product search.
