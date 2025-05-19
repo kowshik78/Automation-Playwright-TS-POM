@@ -26,10 +26,10 @@ npx playwright test
 
 ## Allure Report Setup 
 * Install Allure Playwright Reporter and Allure Commandline:**
-``
+```
 npm install -D allure-playwright
 npm install -D allure-commandline
-``
+```
 * Generate Allure Report after test execution:**
 ```
 npx playwright test
